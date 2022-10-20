@@ -1,6 +1,4 @@
 # Riemann Sum Calculator (for only f(x) = x or f(x) = x^2)
-# Name: Nicholas Caro Lopez
-# Student ID: 501162580
 # Problem: It is very tedious writing out the entire solution to approximating simple integrals using the Riemann Sum
 
 file = open("output.txt", "w")
