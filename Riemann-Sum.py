@@ -183,9 +183,8 @@ if __name__ == "__main__":
     # Title
     print("Riemann Sum Calculator (for every polynomial Parent Function or y = ax^n + z for a,x,z existing as integers)")
     
-    # Need to select one of the two possible functions
+    # Need to select a function from the user
     func = input("Input a function (f(x)) = ")
-    # While loop to ensure the user selects a usable function
     
     # Need to select one of the four different ways to approximate an integral with the Riemann Sum
     methodApprox = input("Choose which approximation method you would like to use (Left, Middle, Right or Trapezoid): ")
