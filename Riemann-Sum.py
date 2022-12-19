@@ -49,7 +49,7 @@ def f(x):
             if ord(parsed[i]) not in [32, 43, 45, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 94, 120]:
                 raise ValueError("Your function seems to be too complex. Please restart this program")
                 sys.exit()
-        # Edge case: Constant function
+        # Edge case 1: Constant function
         if parsed.count("x") == 0:
             coefficients.append(int(parsed))
             powers.append(0)
@@ -61,6 +61,12 @@ def f(x):
             coefficients.append(int(a[0]))
         except ValueError:
             coefficients.append(1)
+        
+        # Edge case 2: n is a negative integer & z = 0
+        if (parsed.find("^") + 1 == parsed.find("-")) and parsed.count("^") == 1 and parsed.count("+") == 0 and parsed.count("-") == 1:
+            powers.append(int(parsed[parsed.find("^") + 1: ]))
+            pureNumber.append(0)
+            return coefficients[0] * (x ** powers[0]) + pureNumber[0] 
         
         # Extracts the power on the x-term (n) and the constant (z)
         # Case 1: There is no "n" in the inputted function 
